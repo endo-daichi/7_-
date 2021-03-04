@@ -5,6 +5,21 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<link rel="stylesheet" type="text/css" href=style.css>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+        
+        <script>
+    $(document).ready(function(){
+      $('.aaa').bxSlider({
+          auto: true,
+          mode: 'horizontal',
+          speed: 2000,
+          slideWidth: 3000
+      });
+    });
+  </script>
 	</head>
 	<body>
         <div class="ata">
@@ -17,6 +32,7 @@
 				<li>登録フォーム</li>
 				<li>問い合わせ</li>
 				<li>その他</li>
+                <li><a href = "http://localhost/7_programming_jisyu/7_プログラミング実習/regist.php">アカウント登録</a></li>
 			</ul>
 		</header>
 		<main>
@@ -24,7 +40,14 @@
 				    <div class="left">
                         <h3>プログラミングに役立つ書籍</h3>
                         <p>2017年1月15日</p>
-                        <img src="bookstore.jpg"><br>
+                        <div class="aaa">  
+                            <div><img src="jQuery_image1.jpg"></div>
+                            <div><img src="jQuery_image2.jpg"></div>
+                            <div><img src="jQuery_image3.jpg"></div>
+                            <div><img src="jQuery_image4.jpg"></div>
+                            <div><img src="jQuery_image5.jpg"></div>
+                        </div>
+                        
 				        <div class="def">
                             <p>D.I.BlogはD.I.Worksが提供する演習課題です。</p>
                         </div>
