@@ -6,6 +6,61 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="style1.css">
+        <script type="text/javascript">
+                function check(){
+                    if(regi.family_name.value == ""){
+                        alert("名前（姓）が未入力です。");
+                        return false;
+                    }
+                    if(regi.last_name.value == ""){
+                        alert("名前（名）が未入力です。");
+                        return false;
+                    }
+                    if(regi.family_name_kana.value == ""){
+                        alert("カナ（姓）が未入力です。");
+                        return false;
+                    }
+                    if(regi.family_name_kana.value == ""){
+                        alert("カナ（名）が未入力です。");
+                        return false;
+                    }
+                    if(regi.mail.value == ""){
+                        alert("メールアドレスが未入力です。");
+                        return false;
+                    }
+                    if(regi.password.value == ""){
+                        alert("パスワードが未入力です。");
+                        return false;
+                    }
+                    if(regi.gender.value == ""){
+                        alert("性別が未入力です。");
+                        return false;
+                    }
+                    if(regi.postel_code.value == ""){
+                        alert("郵便番号が未入力です。");
+                        return false;
+                    }
+                    if(regi.prefecture.value == ""){
+                        alert("住所（都道府県）が未入力です。");
+                        return false;
+                    }
+                    if(regi.address_1.value == ""){
+                        alert("住所（市区町村）が未入力です。");
+                        return false;
+                    }
+                    if(regi.address_2.value == ""){
+                        alert("住所（番地）が未入力です。");
+                        return false;
+                    }
+                    if(regi.authority.value == ""){
+                        alert("権限が未入力です。");
+                        return false;
+                    }
+                    else{
+                        return true;
+                    }
+                }
+            </script>
 	</head>
 	<body>
         <div class="ata">
@@ -24,7 +79,7 @@
 	<body>
         <h4>アカウント登録画面</h4>
         
-        <form method="post" action="regist_confirm.php">
+        <form method="post" action="regist_confirm.php" name="regi">
             <dl>
             <div>
                 
@@ -152,62 +207,8 @@
                 <br>
             </div>
             </dl>
-            
             <div>
-                <input type="submit" class="submit" value="確認する">
-                
-                <?php
-                    if(isset($_POST['family_name'])){
-                        $alert1 ="<script type='text/javascript'>alert('名前（姓）が未入力です。');</script>";
-                        echo $alert1;
-                    }
-                    else if(isset($_POST['last_name'])){
-                        $alert2 ="<script type='text/javascript'>alert('名前（名）が未入力です。');</script>";
-                        echo $alert2;
-                    }
-                    else if(isset($_POST['family_name_kana'])){
-                        $alert3 ="<script type='text/javascript'>alert('カタカナ（名）が未入力です。');</script>";
-                        echo $alert3;
-                    }   
-                    else if(isset($_POST['last_name_kana'])){
-                        $alert4 ="<script type='text/javascript'>alert('カタカナ（名）が未入力です。');</script>";
-                        echo $alert4;
-                    }
-                    else if(isset($_POST['mail'])){
-                        $alert5 ="<script type='text/javascript'>alert('メールアドレスが未入力です。');</script>";
-                        echo $alert5;
-                    }
-                    else if(isset($_POST['password'])){
-                        $alert6 ="<script type='text/javascript'>alert('パスワードが未入力です。');</script>";
-                        echo $alert6;
-                    }
-                    else if(isset($_POST['gender'])){
-                        $alert7 ="<script type='text/javascript'>alert('性別が未入力です。');</script>";
-                        echo $alert7;
-                    }
-                    else if(isset($_POST['postel_code'])){
-                        $alert8 ="<script type='text/javascript'>alert('郵便番号が未入力です。');</script>";
-                        echo $alert8;
-                    }
-                    else if(isset($_POST['prefecture'])){
-                        $alert9 ="<script type='text/javascript'>alert('住所（都道府県）が未入力です。');</script>";
-                        echo $alert9;
-                    }
-                    else if(isset($_POST['address_1'])){
-                        $alert10 ="<script type='text/javascript'>alert('住所（市区町村）が未入力です。');</script>";
-                        echo $alert10;
-                    }
-                    else if(isset($_POST['address_2'])){
-                        $alert11 ="<script type='text/javascript'>alert('住所（番地）が未入力です。');</script>";
-                        echo $alert11;
-                    }
-                    else if(isset($_POST['authority'])){
-                        $alert12 ="<script type='text/javascript'>alert('権限が未入力です。');</script>";
-                        echo $alert12;
-                    }
-                
-                >
-                    
+                <input type="submit" class="submit" value="確認する" onclick="return check();">
             </div>
         
         </form>
