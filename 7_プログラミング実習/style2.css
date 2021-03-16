@@ -32,31 +32,45 @@ main{
 	border: 1px solid black;
 }
 
-form{
-    padding:30px;
+.def{
     padding-left: 500px;
 }
 
-form dl dt{
+
+dl dt{
+    padding-left: 500px;
     width: 165px;
-    padding:10px 0;
+    padding: 10px;
     float: left;
     clear: both;
+    text-align: center;
 }
 
-form dl dd{
+dl dd{
   padding:10px 0;
 }
 
 
-.submit{
-    border:1px solid lightgray;
-    padding: 4px 10px;
-    color:white;
-    background-color: #bfbfbf;
-    border-radius: 5px;
-    border-bottom: 2px solid gray;
+.button1{
+    
+    border:1px solid black;
+    padding: 10px 100px;
+    color:black;
+    background-color: white;
 }
+
+.button2{
+    border:1px solid black;
+    padding: 10px 100px;
+    color:black;
+    background-color: white;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+}
+
 
 footer{
 	clear:left;

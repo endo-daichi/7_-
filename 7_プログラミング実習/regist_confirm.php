@@ -28,7 +28,7 @@
         <div class="confirm">
             <h5>アカウント登録確認画面</h5>
             
-            <form action="regist.php" method="post">
+            <div class = "def">
                 <dl>
                 <db><p>名前(姓）
                     <?php echo $_POST['family_name']; ?>
@@ -85,11 +85,29 @@
                     </p></db>
                     <br>
                 </dl>
-                <input type="submit" class="button1" value="前に戻る" onclick="history.back()">
-            </form>
-            <form action="regist_complete.php">
+                </div>
+            
+                <div class="flex">
+                    <form action="regist.php">
+                <input type="submit" class="button1" value="前に戻る" onclick="history.back()" style="margin:0px float=left;">
+                    </form>
+            
+            <form action="regist_complete.php" method="post">
                 <input type="submit" class="button2" value="登録する">
+                <input type="hidden" value="<?php echo $_POST['family_name']; ?>" name="family_name">
+                <input type="hidden" value="<?php echo $_POST['last_name']; ?>" name="last_name">
+                <input type="hidden" value="<?php echo $_POST['family_name_kana']; ?>" name="family_name_kana">
+                <input type="hidden" value="<?php echo $_POST['last_name_kana']; ?>" name="last_name_kana">
+                <input type="hidden" value="<?php echo $_POST['mail']; ?>" name="mail">
+                <input type="hidden" value="<?php echo $_POST['password']; ?>" name="password">
+                <input type="hidden" value="<?php echo $_POST['gender']; ?>" name="gender">
+                <input type="hidden" value="<?php echo $_POST['postel_code']; ?>" name="postel_code">
+                <input type="hidden" value="<?php echo $_POST['prefecture']; ?>" name="prefecture">
+                <input type="hidden" value="<?php echo $_POST['address_1']; ?>" name="address_1">
+                <input type="hidden" value="<?php echo $_POST['address_2']; ?>" name="address_2">
+                <input type="hidden" value="<?php echo $_POST['authority']; ?>" name="authority">
             </form>
+                </div>
         </div>
         <footer>
 		Copyright D.I.works| D.I.blog is the one which provides A to Z about programming

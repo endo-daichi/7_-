@@ -80,7 +80,7 @@
             
             <div>
                 <dt><label>郵便番号</label></dt>
-                <dd><input type="text" class="text" size="35" maxlength="7" name="postel_code"></dd>
+                <dd><input type="text" class="text" size="35" maxlength="7" pattern="^[0-9]+$" name="postel_code"></dd>
                 <br>
             </div>
             
@@ -141,13 +141,13 @@
             
             <div>
                 <dt>住所（市区町村）</dt>
-                <dd><input type="text" class="text" size="35" maxlength="10" name="address_1"></dd>
+                <dd><input type="text" class="text" size="35" maxlength="10" pattern="[\u4E00-\u9FFF\u3040-\u309Fー\u30A1-\u30F6\uFF10-\uFF19\0-9\-\s]*" name="address_1"></dd>
                 <br>
             </div>
             
             <div>
                 <dt><label>住所（番地）</label></dt>
-                <dd><input type="text" class="text" size="35" maxlength="100" name="address_2"></dd>
+                <dd><input type="text" class="text" size="35" maxlength="100" pattern="[\u4E00-\u9FFF\u3040-\u309Fー\u30A1-\u30F6\uFF10-\uFF19\0-9\-\s]*" name="address_2"></dd>
             <br>
             </div>
             
@@ -160,11 +160,12 @@
                 <br>
             </div>
             </dl>
+            
             <div>
                 <input type="submit" class="submit" value="確認する">
             </div>
-        </form>
         
+        </form>
 		
 	</body>
 		</main>
