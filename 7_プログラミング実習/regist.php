@@ -155,55 +155,59 @@
             
             <div>
                 <input type="submit" class="submit" value="確認する">
-                    isset($_POST['family_name']){
+                
+                <?php
+                    if(isset($_POST['family_name'])){
                         $alert1 ="<script type='text/javascript'>alert('名前（姓）が未入力です。');</script>";
                         echo $alert1;
                     }
-                    isset($_POST['last_name']){
+                    else if(isset($_POST['last_name'])){
                         $alert2 ="<script type='text/javascript'>alert('名前（名）が未入力です。');</script>";
                         echo $alert2;
                     }
-                    isset($_POST['family_name_kana']){
+                    else if(isset($_POST['family_name_kana'])){
                         $alert3 ="<script type='text/javascript'>alert('カタカナ（名）が未入力です。');</script>";
                         echo $alert3;
-                    }
-                    isset($_POST['last_name_kana']){
+                    }   
+                    else if(isset($_POST['last_name_kana'])){
                         $alert4 ="<script type='text/javascript'>alert('カタカナ（名）が未入力です。');</script>";
                         echo $alert4;
                     }
-                    isset($_POST['mail']){
-                        $alert5 ="<script type='text/javascript'>alert('メールアドレスが未入力です。')</script>";
+                    else if(isset($_POST['mail'])){
+                        $alert5 ="<script type='text/javascript'>alert('メールアドレスが未入力です。');</script>";
                         echo $alert5;
                     }
-                    isset($_POST['password']){
+                    else if(isset($_POST['password'])){
                         $alert6 ="<script type='text/javascript'>alert('パスワードが未入力です。');</script>";
                         echo $alert6;
                     }
-                    isset($_POST['gender']){
+                    else if(isset($_POST['gender'])){
                         $alert7 ="<script type='text/javascript'>alert('性別が未入力です。');</script>";
                         echo $alert7;
                     }
-                    isset($_POST['postel_code']){
+                    else if(isset($_POST['postel_code'])){
                         $alert8 ="<script type='text/javascript'>alert('郵便番号が未入力です。');</script>";
                         echo $alert8;
                     }
-                    isset($_POST['prefecture']){
+                    else if(isset($_POST['prefecture'])){
                         $alert9 ="<script type='text/javascript'>alert('住所（都道府県）が未入力です。');</script>";
                         echo $alert9;
                     }
-                    isset($_POST['address_1']){
+                    else if(isset($_POST['address_1'])){
                         $alert10 ="<script type='text/javascript'>alert('住所（市区町村）が未入力です。');</script>";
                         echo $alert10;
                     }
-                    isset($_POST['address_2']){
+                    else if(isset($_POST['address_2'])){
                         $alert11 ="<script type='text/javascript'>alert('住所（番地）が未入力です。');</script>";
                         echo $alert11;
                     }
-                    isset($_POST['authority']){
+                    else if(isset($_POST['authority'])){
                         $alert12 ="<script type='text/javascript'>alert('権限が未入力です。');</script>";
                         echo $alert12;
                     }
                 
+                >
+                    
             </div>
         
         </form>
