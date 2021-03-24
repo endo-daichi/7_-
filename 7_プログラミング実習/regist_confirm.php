@@ -104,7 +104,7 @@
                     </form>
                 <?php
                 
-                    $password = hash('hash256',password);
+                    $password = hash('md5',$_POST['password']);
                     
                     if ($_POST['gender']=="男"){
                         $gender = 0;
@@ -128,7 +128,7 @@
                     <input type="hidden" value="<?php echo $_POST['family_name_kana']; ?>" name="family_name_kana">
                     <input type="hidden" value="<?php echo $_POST['last_name_kana']; ?>" name="last_name_kana">
                     <input type="hidden" value="<?php echo $_POST['mail']; ?>" name="mail">
-                    <input type="hidden" value="<?php echo $_POST['password']; ?>" name="password">
+                    <input type="hidden" value="password" name="password">
                     <input type="hidden" value="gender" name="gender">
                     <input type="hidden" value="<?php echo $_POST['postal_code']; ?>" name="postal_code">
                     <input type="hidden" value="<?php echo $_POST['prefecture']; ?>" name="prefecture">
