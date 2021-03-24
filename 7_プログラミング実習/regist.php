@@ -120,8 +120,8 @@
             
             <div>
                 <dt><label>性別</label></dt>
-                <dd><input type="radio" name="gender" checked value="男" value="<?php if( !empty($_POST['gender']) && $_POST['gender'] === "男" ){ echo 'checked'; } ?>">男
-                <input type="radio"  name="gender" value="女" value="<?php if( !empty($_POST['gender']) && $_POST['gender'] === "女" ){ echo 'checked'; } ?>">女</dd>
+                <dd><input type="radio" name="gender" value="<?php if( !empty($_POST['gender']) && $_POST['gender'] === "男" ){ echo 'checked'; } ?>" checked>男
+                <input type="radio" name="gender" value="女" value="<?php if( !empty($_POST['gender']) && $_POST['gender'] === "女" ){ echo 'checked'; } ?>">女</dd>
                 <br>
             </div>
             

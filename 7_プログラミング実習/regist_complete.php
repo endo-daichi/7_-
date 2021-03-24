@@ -10,7 +10,7 @@
     }
                     
     if ($_POST['authority']=="一般"){
-        $authority = "0";
+        $authority = 0;
     }
     else if ($_POST['authority']=="管理者"){
         $authority = 1;
@@ -22,7 +22,7 @@
     try{
             $pdo = new PDO("mysql:dbname=lesson01;host=localhost;","root","");
             $pdo ->exec("insert into regist(family_name,last_name,family_name_kana,last_name_kana,mail,password,gender,postal_code,prefecture,address_1,address_2,authority)
-             values('".$_POST['family_name']."','".$_POST['last_name']."','".$_POST['family_name_kana']."','".$_POST['last_name_kana']."','".$_POST['mail']."','$password','gender','".$_POST['postal_code']."','".$_POST['prefecture']."','".$_POST['address_1']."','".$_POST['address_2']."','authority');");
+             values('".$_POST['family_name']."','".$_POST['last_name']."','".$_POST['family_name_kana']."','".$_POST['last_name_kana']."','".$_POST['mail']."','$password','$gender','".$_POST['postal_code']."','".$_POST['prefecture']."','".$_POST['address_1']."','".$_POST['address_2']."','$authority');");
     }catch(Exception $ex) {
         echo 'エラーが発生したため、アカウント登録ができません。';
         return FALSE;
