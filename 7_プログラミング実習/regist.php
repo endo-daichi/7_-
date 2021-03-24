@@ -127,7 +127,7 @@
             
             <div>
                 <dt><label>郵便番号</label></dt>
-                <dd><input type="text" class="text" size="7" maxlength="7" pattern="^[0-9]+$" name="postel_code" value="<?php if( !empty($_POST['postel_code']) ){ echo $_POST['postel_code']; } ?>"></dd>
+                <dd><input type="text" class="text" size="7" maxlength="7" pattern="^[0-9]+$" name="postal_code" value="<?php if( !empty($_POST['postal_code']) ){ echo $_POST['postal_code']; } ?>"></dd>
                 <br>
             </div>
             
