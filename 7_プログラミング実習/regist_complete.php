@@ -15,9 +15,7 @@
     else if ($_POST['authority']=="管理者"){
         $authority = 1;
     }
-?>
 
-<?php
     mb_internal_encoding("utf8");
     try{
             $pdo = new PDO("mysql:dbname=lesson01;host=localhost;","root","");
@@ -25,7 +23,7 @@
              values('".$_POST['family_name']."','".$_POST['last_name']."','".$_POST['family_name_kana']."','".$_POST['last_name_kana']."','".$_POST['mail']."','$password','$gender','".$_POST['postal_code']."','".$_POST['prefecture']."','".$_POST['address_1']."','".$_POST['address_2']."','$authority');");
     }catch(Exception $ex) {
         echo 'エラーが発生したため、アカウント登録ができません。';
-        return FALSE;
+        return false;
     }
 ?>
 
@@ -41,7 +39,7 @@
     </head>
     
     <body>
-                        <div class="ata">
+        <div class="ata">
         <img src="diblog_logo.jpg"></div>
 		<header>
 			<ul class="abc">
