@@ -194,7 +194,7 @@
             
             <div>
                 <dt><label>住所（番地）</label></dt>
-                <dd><input type="text" class="text" size="35" maxlength="100" pattern="[\u4E00-\u9FFF\u3040-\u309Fー\u30A1-\u30F6\uFF10-\uFF19\0-9\-\s]*" name="address_2" value="<?php if( !empty($_POST['address_2']) ){ echo $_POST['address_2']; } ?>"></dd>
+                <dd><input type="text" class="text" size="35" maxlength="100" pattern="[\u4E00-\u9FFF\u3040-\u309Fー\u30A1-\u30F6\uFF10-\uFF19\0-9\x{30FC}\-\s]*" name="address_2" value="<?php if( !empty($_POST['address_2']) ){ echo $_POST['address_2']; } ?>"></dd>
             <br>
             </div>
             
