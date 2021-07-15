@@ -1,31 +1,4 @@
-<?php
-                
-    $password = hash('md5',$_POST['password']);
-                    
-    if ($_POST['gender']=="男"){
-        $gender = 0;
-    }
-    else if ($_POST['gender']=="女"){
-        $gender = 1;
-    }
-                    
-    if ($_POST['authority']=="一般"){
-        $authority = 0;
-    }
-    else if ($_POST['authority']=="管理者"){
-        $authority = 1;
-    }
 
-    mb_internal_encoding("utf8");
-    try{
-            $pdo = new PDO("mysql:dbname=lesson01;host=localhost;","root","");
-            $pdo ->exec("insert into regist(family_name,last_name,family_name_kana,last_name_kana,mail,password,gender,postal_code,prefecture,address_1,address_2,authority)
-             values('".$_POST['family_name']."','".$_POST['last_name']."','".$_POST['family_name_kana']."','".$_POST['last_name_kana']."','".$_POST['mail']."','$password','$gender','".$_POST['postal_code']."','".$_POST['prefecture']."','".$_POST['address_1']."','".$_POST['address_2']."','$authority');");
-    }catch(Exception $ex) {
-        echo 'エラーが発生したため、アカウント登録ができません。';
-        return false;
-    }
-?>
 
 <!doctype HTML>
 
@@ -53,24 +26,73 @@
 		</header>
         
         <div class="confirm">
-            <h5>アカウント一覧画面</h5>
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>名前(姓)</th>
-                    <th>名前(名)</th>
-                    <th>カナ(姓)</th>
-                    <th>カナ(名)</th>
-                    <th>メールアドレス</th>
-                    <th>性別</th>
-                    <th>アカウント情報</th>
-                    <th>削除フラグ</th>
-                    <th>登録日時</th>
-                    <th>更新日時</th>
-                    <th>操作</th>
-                </tr>
-                
-            </table>
+            <h5>アカウント一覧画面</h5>            
+                        <?php
+                    mb_internal_encoding("utf8");
+                    $pdo = new PDO("mysql:dbname=lesson01;host=localhost;","root","");
+                    $stmt = $pdo->query("select * from regist");
+            
+                        echo '<table border=1>';
+                        echo '<th>';
+                        echo 'ID';
+                        echo '<th>';
+                        echo '名前（姓）';
+                        echo '<th>';
+                        echo '名前（名）';
+                        echo '<th>';
+                        echo 'カナ（姓）';
+                        echo '<th>';
+                        echo 'カナ（名）';
+                        echo '<th>';
+                        echo 'メールアドレス';
+                        echo '<th>';
+                        echo '性別';
+                        echo '<th>';
+                        echo 'アカウント権限';
+                        echo '<th>';
+                        echo '削除フラグ';
+                        echo '<th>';
+                        echo '登録日時';
+                        echo '<th>';
+                        echo '更新日時';
+                        echo '<th>';
+                        echo '操作';
+                        echo '<br>';
+                        
+                        while($row = $stmt->fetch()){
+                            echo '<tr>';
+                            echo '<td>';
+                            echo $row['ID'];
+                            echo '<td>';
+                            echo $row['family_name'];
+                            echo '<td>';
+                            echo $row['last_name'];
+                            echo '<td>';
+                            echo $row['family_name_kana'];
+                            echo '<td>';
+                            echo $row['last_name_kana'];
+                            echo '<td>';
+                            echo $row['mail'];
+                            echo '<td>';
+                            $gender1 = $row['gender'];
+                            if($gender1 == 0){
+                                echo '男';
+                            }
+                            if($gender1 == 1){
+                                echo '女';
+                            }
+                            echo '<td>';
+                            $authority1 = $row['authority'];
+                            if($authority1 == 0){
+                                echo '一般';
+                            }
+                            if($authority1 == 1){
+                                echo '管理者';
+                            }
+                            echo '<br>';
+                        }
+            echo '<br>';
+                ?>
             
             <form action="index.htm">
                 <input type="submit" class="button1" value="TOPページへ戻る">
