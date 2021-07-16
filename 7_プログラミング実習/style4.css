@@ -27,11 +27,6 @@
 	color:white;
 }
 
-h1{
-    text-align: center;
-    padding: 150px;
-}
-
 form{
     text-align: center;
 }
@@ -43,7 +38,7 @@ form{
 }
 
 footer{
-	clear:left;
+    clear: left;
 	color:white;
 	background-color:black;
 	text-align:center;

@@ -30,7 +30,7 @@
                         <?php
                     mb_internal_encoding("utf8");
                     $pdo = new PDO("mysql:dbname=lesson01;host=localhost;","root","");
-                    $stmt = $pdo->query("select * from regist");
+                    $stmt = $pdo->query("select * from regist order by id desc");
             
                         echo '<table border=1>';
                         echo '<th>';
@@ -89,14 +89,21 @@
                             if($authority1 == 1){
                                 echo '管理者';
                             }
+                            echo '<td>';
+                            echo $row['delete_flag'];
+                            echo '<td>';
+                            $registered_time1 = $row['registered_time'];
+                            echo date('Y/m/d',strtotime($registered_time1));
+                            echo '<td>';
+                            $update_time1 = $row['update_time'];
+                            echo date('Y/m/d',strtotime($update_time1));
+                            echo '<td>';
+                            echo '<input type="submit" name="submit1" value="更新">';
+                            echo '<input type="submit" name="submit2" value="削除">';
+                            echo '</tr>';
                             echo '<br>';
                         }
-            echo '<br>';
                 ?>
-            
-            <form action="index.htm">
-                <input type="submit" class="button1" value="TOPページへ戻る">
-            </form>
         </div>
         <footer>
 		Copyright D.I.works| D.I.blog is the one which provides A to Z about programming
