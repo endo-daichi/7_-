@@ -20,7 +20,7 @@
                         alert("カナ（姓）が未入力です。");
                         return false;
                     }
-                    if(regi.family_name_kana.value == ""){
+                    if(regi.last_name_kana.value == ""){
                         alert("カナ（名）が未入力です。");
                         return false;
                     }
@@ -36,7 +36,7 @@
                         alert("性別が未入力です。");
                         return false;
                     }
-                    if(regi.postel_code.value == ""){
+                    if(regi.postal_code.value == ""){
                         alert("郵便番号が未入力です。");
                         return false;
                     }

@@ -90,7 +90,13 @@
                                 echo '管理者';
                             }
                             echo '<td>';
-                            echo $row['delete_flag'];
+                            $delete_flag1 = $row['delete_flag'];
+                            if($delete_flag1 == 0){
+                                echo '有効';
+                            }
+                            if($delete_flag1 == 1){
+                                echo '無効';
+                            }
                             echo '<td>';
                             $registered_time1 = $row['registered_time'];
                             echo date('Y/m/d',strtotime($registered_time1));
