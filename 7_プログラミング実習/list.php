@@ -30,7 +30,7 @@
                         <?php
                     mb_internal_encoding("utf8");
                     $pdo = new PDO("mysql:dbname=lesson01;host=localhost;","root","");
-                    $stmt = $pdo->query("select * from regist order by id desc");
+                    $stmt = $pdo->query("select * from regist order by id desc"); /* 降順で表示 */
             
                         echo '<table border=1>';
                         echo '<th>';
