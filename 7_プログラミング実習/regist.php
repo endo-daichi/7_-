@@ -108,7 +108,7 @@
             
             <div>
                 <dt><label>メールアドレス</label></dt>
-                <dd><input type="text" class="text" size="35" maxlength="100" name="mail" value="<?php if( !empty($_POST['mail']) ){ echo $_POST['mail']; } ?>"></dd>
+                <dd><input type="text" class="text" size="35" maxlength="100" pattern="[a-z0-9._-]+@[a-z0-9.-]*" name="mail" value="<?php if( !empty($_POST['mail']) ){ echo $_POST['mail']; } ?>"></dd>
                 <br>
             </div>
             
@@ -188,7 +188,7 @@
             
             <div>
                 <dt>住所（市区町村）</dt>
-                <dd><input type="text" class="text" size="35" maxlength="10" pattern="[\u4E00-\u9FFF\u3040-\u309Fー\u30A1-\u30F6\uFF10-\uFF19\0-9\-\s]*" name="address_1" value="<?php if( !empty($_POST['address_1']) ){ echo $_POST['address_1']; } ?>"></dd>
+                <dd><input type="text" class="text" size="35" maxlength="10" pattern="*[\u4E00-\u9FFF\u3040-\u309Fー\u30A1-\u30F6\uFF10-\uFF19]+^[0-9-\s]+^[x21-\x2C\x2E\x2F\x3A-\x40\x5B-\x60\x7B-\x7E]+$*" name="address_1" value="<?php if( !empty($_POST['address_1']) ){ echo $_POST['address_1']; } ?>"></dd>
                 <br>
             </div>
             
