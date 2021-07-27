@@ -85,36 +85,86 @@
                 
                 <dt>名前（姓）</dt>
                 <dd><input type="text" class="text" size="35" maxlength="10" pattern="[\u4E00-\u9FFF\u3040-\u309Fー]*" name="family_name" value="<?php if( !empty($_POST['family_name']) ){ echo $_POST['family_name']; } ?>"></dd>
+                <script type="text/javascript">
+                function alertarea{
+                    if(regi.family_name.value=""){
+                        document.write("名前（姓）が未入力です。");
+                        return false;
+                    }
+                }
+                    
+                </script>
                 <br>
             </div>
             
             <div>
                 <dt><label>名前（名）</label></dt>
                 <dd><input type="text" class="text" size="35" maxlength="10" pattern="[\u4E00-\u9FFF\u3040-\u309Fー]*" name="last_name" value="<?php if( !empty($_POST['last_name']) ){ echo $_POST['last_name']; } ?>"></dd>
+                <script type="text/javascript">
+                    if(regi.last_name.value=""){
+                        <span class="alertarea">
+                            document.write("名前（名）が未入力です。");
+                            return false;
+                        </span>
+                    }
+                </script>
                 <br>
+                
             </div>
             
             <div>
                 <dt><label>カナ（姓）</label></dt>
                 <dd><input type="text" class="text" size="35" maxlength="10" pattern="[\u30A1-\u30F6]*" name="family_name_kana" value="<?php if( !empty($_POST['family_name_kana']) ){ echo $_POST['family_name_kana']; } ?>"></dd>
+                <script type="text/javascript">
+                    if(regi.family_name_kana.value=""){
+                        <span class="alertarea">
+                            document.write("カナ（姓）が未入力です。");
+                            return false;
+                        </span>
+                    }
+                </script>
                 <br>
             </div>
             
             <div>
                 <dt><label>カナ（名）</label></dt>
                 <dd><input type="text" class="text" size="35" maxlength="10" pattern="[\u30A1-\u30F6]*" name="last_name_kana" value="<?php if( !empty($_POST['last_name_kana']) ){ echo $_POST['last_name_kana']; } ?>"></dd>
+                <script type="text/javascript">
+                    if(regi.last_name_kana.value=""){
+                        <span class="alertarea">
+                            document.write("カナ（名）が未入力です。");
+                            return false;
+                        </span>
+                    }
+                </script>
                 <br>
             </div>
             
             <div>
                 <dt><label>メールアドレス</label></dt>
                 <dd><input type="text" class="text" size="35" maxlength="100" pattern="[a-z0-9._-]+@[a-z0-9.-]*" name="mail" value="<?php if( !empty($_POST['mail']) ){ echo $_POST['mail']; } ?>"></dd>
+                <script type="text/javascript">
+                    if(regi.mail.value=""){
+                        <span class="alertarea">
+                            document.write("メールアドレスが未入力です。");
+                            return false;
+                        </span>
+                    }
+                </script>
                 <br>
             </div>
             
             <div>
                 <dt><label>パスワード</label></dt>
                 <dd><input type="password" class="text" size="35" maxlength="10" name="password" value="<?php if( !empty($_POST['password']) ){ echo $_POST['password']; } ?>"></dd>
+                <script type="text/javascript">
+                    if(regi.password.value=""){
+                    <span class="alertarea">
+                        document.write("パスワードが未入力です。");
+                        return false;
+                    </span>
+                    }
+                </script>
                 <br>
             </div>
             
@@ -122,12 +172,28 @@
                 <dt><label>性別</label></dt>
                 <dd><input type="radio" name="gender" checked=checked; value="男" <?php if( !empty($_POST['gender']) && $_POST['gender'] === "男" ){ echo 'checked'; } ?>>男
                 <input type="radio" name="gender" value="女" <?php if( !empty($_POST['gender']) && $_POST['gender'] === "女" ){ echo 'checked'; } ?>>女</dd>
+                <script type="text/javascript">
+                    if(regi.gender.value=""){
+                        <span class="alertarea">
+                            document.write("性別が未入力です。");
+                            return false;
+                        </span>
+                    }
+                </script>
                 <br>
             </div>
             
             <div>
                 <dt><label>郵便番号</label></dt>
                 <dd><input type="text" class="text" size="7" maxlength="7" pattern="^[0-9]+$" name="postal_code" value="<?php if( !empty($_POST['postal_code']) ){ echo $_POST['postal_code']; } ?>"></dd>
+                <script type="text/javascript">
+                    if(regi.postal_code.value=""){
+                        <span class="alertarea">
+                            document.write("郵便番号が未入力です。");
+                            return false;
+                        </span>
+                    }
+                </script>
                 <br>
             </div>
             
@@ -183,19 +249,43 @@
                     <option value="鹿児島県" <?php if( !empty($_POST['prefecture']) && $_POST['prefecture'] === "鹿児島県" ){ echo 'selected'; } ?>>鹿児島県</option>
                     <option value="沖縄県" <?php if( !empty($_POST['prefecture']) && $_POST['prefecture'] === "沖縄県" ){ echo 'selected'; } ?>>沖縄県</option>
                     </select></dd>
+                <script type="text/javascript">
+                    if(regi.prefecture.value=""){
+                        <span class="alertarea">
+                            document.write("住所（都道府県）が未入力です。");
+                            return false;
+                        </span>
+                    }
+                </script>
                 <br>
             </div>
             
             <div>
                 <dt>住所（市区町村）</dt>
                 <dd><input type="text" class="text" size="35" maxlength="10" pattern="[\u4E00-\u9FFF\u3040-\u309Fー\u30A1-\u30F6\uFF10-\uFF19\d\-\s]*" name="address_1" value="<?php if( !empty($_POST['address_1']) ){ echo $_POST['address_1']; } ?>"></dd>
+                <script type="text/javascript">
+                    if(regi.address_1.value=""){
+                        <span class="alertarea">
+                            document.write("住所（市区町村）が未入力です。");
+                            return false;
+                        </span>
+                    }
+                </script>
                 <br>
             </div>
             
             <div>
                 <dt><label>住所（番地）</label></dt>
                 <dd><input type="text" class="text" size="35" maxlength="100" pattern="[\u4E00-\u9FFF\u3040-\u309Fー\u30A1-\u30F6\uFF10-\uFF19\d\-\s\\x{30FC}]*" name="address_2" value="<?php if( !empty($_POST['address_2']) ){ echo $_POST['address_2']; } ?>"></dd>
-            <br>
+                <script type="text/javascript">
+                    if(address_2.value=""){
+                        <span class="alertarea">
+                            document.write("住所（番地）が未入力です。");
+                            return false;
+                        </span>
+                    }
+                </script>
+                <br>
             </div>
             
             <div>
@@ -204,11 +294,19 @@
                         <option value="一般" <?php if( !empty($_POST['authority']) && $_POST['authority'] === "一般" ){ echo 'selected'; } ?>>一般</option>
                         <option value="管理者" <?php if( !empty($_POST['authority']) && $_POST['authority'] === "管理者" ){ echo 'selected'; } ?>>管理者</option>
                         </select></dd>
+                <script type="text/javascript">
+                    if(authority.value=""){
+                        <span class="alertarea">
+                            document.write("アカウント権限が未入力です。");
+                            return false;
+                        </span>
+                    }
+                </script>
                 <br>
             </div>
             </dl>
             <div>
-                <input type="submit" class="submit" value="確認する" onclick="return check();">
+                <input type="submit" class="submit" value="確認する" onclick="return alertarea();">
             </div>
         
         </form>
